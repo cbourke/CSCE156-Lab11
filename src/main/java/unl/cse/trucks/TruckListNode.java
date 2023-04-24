@@ -21,4 +21,8 @@ public class TruckListNode {
     public void setNext(TruckListNode next) {
         this.next = next;
     }
+    
+    public String toString() {
+    	return this.item.toString();
+    }
 }
