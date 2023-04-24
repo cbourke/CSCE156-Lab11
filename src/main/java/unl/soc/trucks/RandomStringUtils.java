@@ -1,4 +1,4 @@
-package unl.cse.trucks;
+package unl.soc.trucks;
 
 /**
  * Copyright 2002-2004 The Apache Software Foundation.

@@ -1,4 +1,4 @@
-package unl.cse.trucks;
+package unl.soc.trucks;
 
 /**
  * A linked list implementation for <code>Truck</code> instances.

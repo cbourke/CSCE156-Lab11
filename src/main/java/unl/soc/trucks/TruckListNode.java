@@ -1,4 +1,4 @@
-package unl.cse.trucks;
+package unl.soc.trucks;
 
 public class TruckListNode {
 

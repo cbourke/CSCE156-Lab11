@@ -1,4 +1,4 @@
-package unl.cse.trucks;
+package unl.soc.trucks;
 
 /**
  * An ad-hoc testing class for you to use to troubleshoot and debug your
