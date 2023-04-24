@@ -6,192 +6,189 @@ package unl.cse.trucks;
  */
 public class Truck {
 
-    public static final int HORSEPOWER_MIN = 320;
-    public static final int HORSEPOWER_MAX = 600;
-    public static final int CARRYINGCAPACITY_MIN = 44000;
-    public static final int CARRYINGCAPACITY_MAX = 48000;
-    public static final String[] TRANSMISSION_VALUES = {"Manual", "Automatic"};
-    public static final int WHEELBASE_MIN = 230;
-    public static final int WHEELBASE_MAX = 280;
-    public static final int WHEELCUT_MIN = 40;
-    public static final int WHEELCUT_MAX = 50;
-    
-    /**
-     * An inner static class that supports the 
-     * <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder Pattern</a>
-     * so that instances can be easily created
-     * 
-     */
-    public static class Builder {
-    	private String licensePlate;
-        private int carryingCapacity;
-        private int horsePower;
-        private String transmission;
-        private int wheelBase;
-        private int wheelCut;
-        
-    	public Builder licensePlate(final String licensePlate) {
-    		this.licensePlate = licensePlate;
-    		return this;
-    	}
-    	
-    	public Builder carryingCapacity(final int carryingCapacity) {
-    		this.carryingCapacity = carryingCapacity;
-    		return this;
-    	}
+	public static final int HORSEPOWER_MIN = 320;
+	public static final int HORSEPOWER_MAX = 600;
+	public static final int CARRYINGCAPACITY_MIN = 44000;
+	public static final int CARRYINGCAPACITY_MAX = 48000;
+	public static final String[] TRANSMISSION_VALUES = { "Manual", "Automatic" };
+	public static final int WHEELBASE_MIN = 230;
+	public static final int WHEELBASE_MAX = 280;
+	public static final int WHEELCUT_MIN = 40;
+	public static final int WHEELCUT_MAX = 50;
 
-    	public Builder horsePower(final int horsePower) {
-    		this.horsePower = horsePower;
-    		return this;
-    	}
+	/**
+	 * An inner static class that supports the
+	 * <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder Pattern</a>
+	 * so that instances can be easily created
+	 * 
+	 */
+	public static class Builder {
+		private String licensePlate;
+		private int carryingCapacity;
+		private int horsePower;
+		private String transmission;
+		private int wheelBase;
+		private int wheelCut;
 
-    	public Builder transmission(final String transmission) {
-    		this.transmission = transmission;
-    		return this;
-    	}
+		public Builder licensePlate(final String licensePlate) {
+			this.licensePlate = licensePlate;
+			return this;
+		}
 
-    	public Builder wheelBase(final int wheelBase) {
-    		this.wheelBase = wheelBase;
-    		return this;
-    	}
+		public Builder carryingCapacity(final int carryingCapacity) {
+			this.carryingCapacity = carryingCapacity;
+			return this;
+		}
 
-    	public Builder wheelCut(final int wheelCut) {
-    		this.wheelCut = wheelCut;
-    		return this;
-    	}
+		public Builder horsePower(final int horsePower) {
+			this.horsePower = horsePower;
+			return this;
+		}
 
-    	public Truck build() {
-    		return new Truck(this.licensePlate, this.carryingCapacity, this.horsePower,
-    	            this.transmission, this.wheelBase, this.wheelCut);
-    	}
-    }
-    
-    private final String licensePlate;
-    private final int carryingCapacity;
-    private final int horsePower;
-    private final String transmission;
-    private final int wheelBase;
-    private final int wheelCut;
+		public Builder transmission(final String transmission) {
+			this.transmission = transmission;
+			return this;
+		}
 
-    private Truck(String licensePlate, int carryingCapacity, int horsePower,
-            String transmission, int wheelBase, int wheelCut) {
-        this.licensePlate = licensePlate;
-        this.carryingCapacity = carryingCapacity;
-        this.horsePower = horsePower;
-        this.transmission = transmission;
-        this.wheelBase = wheelBase;
-        this.wheelCut = wheelCut;
-    }
+		public Builder wheelBase(final int wheelBase) {
+			this.wheelBase = wheelBase;
+			return this;
+		}
 
-    /**
-     * Prints the information about the truck
-     */
-    public void print() {
-        System.out.println("----------------------------------------");
-        System.out.println("Licence Plate: " + this.licensePlate);
-        System.out.println("Carrying Capacity: " + this.carryingCapacity);
-        System.out.println("Horse Power: " + this.horsePower);
-        System.out.println("Transmission: " + this.transmission);
-        System.out.println("Wheel Base: " + this.wheelBase);
-        System.out.println("Wheel Cut: " + this.wheelCut);
-        System.out.println("----------------------------------------");
-        return;
-    }
+		public Builder wheelCut(final int wheelCut) {
+			this.wheelCut = wheelCut;
+			return this;
+		}
 
-    /**
-     *
-     * @return a randomly generated Truck
-     */
-    public static Truck createRandomTruck() {
-        Truck.Builder randomTruck = new Truck.Builder();
+		public Truck build() {
+			return new Truck(this.licensePlate, this.carryingCapacity, this.horsePower, this.transmission,
+					this.wheelBase, this.wheelCut);
+		}
+	}
 
-        String licensePlate = RandomStringUtils.randomAlphabetic(3) + " "
-                + RandomStringUtils.randomNumeric(3);
-        java.util.Random randomNumberGenerator = new java.util.Random();
+	private final String licensePlate;
+	private final int carryingCapacity;
+	private final int horsePower;
+	private final String transmission;
+	private final int wheelBase;
+	private final int wheelCut;
 
-        int carryingCapacity = Truck.CARRYINGCAPACITY_MIN+randomNumberGenerator.nextInt(Truck.CARRYINGCAPACITY_MAX-Truck.CARRYINGCAPACITY_MIN);
-        
+	private Truck(String licensePlate, int carryingCapacity, int horsePower, String transmission, int wheelBase,
+			int wheelCut) {
+		this.licensePlate = licensePlate;
+		this.carryingCapacity = carryingCapacity;
+		this.horsePower = horsePower;
+		this.transmission = transmission;
+		this.wheelBase = wheelBase;
+		this.wheelCut = wheelCut;
+	}
 
-        int horsePower = Truck.HORSEPOWER_MIN+randomNumberGenerator.nextInt(Truck.HORSEPOWER_MAX-Truck.HORSEPOWER_MIN);
-        
+	/**
+	 * Prints the information about the truck
+	 */
+	public void print() {
+		System.out.println("----------------------------------------");
+		System.out.println("Licence Plate: " + this.licensePlate);
+		System.out.println("Carrying Capacity: " + this.carryingCapacity);
+		System.out.println("Horse Power: " + this.horsePower);
+		System.out.println("Transmission: " + this.transmission);
+		System.out.println("Wheel Base: " + this.wheelBase);
+		System.out.println("Wheel Cut: " + this.wheelCut);
+		System.out.println("----------------------------------------");
+		return;
+	}
 
-        String transmission = Truck.TRANSMISSION_VALUES[randomNumberGenerator.nextInt(2)];
+	/**
+	 *
+	 * @return a randomly generated Truck
+	 */
+	public static Truck createRandomTruck() {
+		Truck.Builder randomTruck = new Truck.Builder();
 
-        int wheelBase = Truck.WHEELBASE_MIN+randomNumberGenerator.nextInt(Truck.WHEELBASE_MAX-Truck.WHEELBASE_MIN);
-        
+		String licensePlate = RandomStringUtils.randomAlphabetic(3) + " " + RandomStringUtils.randomNumeric(3);
+		java.util.Random randomNumberGenerator = new java.util.Random();
 
-        int wheelCut = Truck.WHEELCUT_MIN+randomNumberGenerator.nextInt(Truck.WHEELCUT_MAX-Truck.WHEELCUT_MIN);
-        
+		int carryingCapacity = Truck.CARRYINGCAPACITY_MIN
+				+ randomNumberGenerator.nextInt(Truck.CARRYINGCAPACITY_MAX - Truck.CARRYINGCAPACITY_MIN);
 
-        randomTruck.carryingCapacity(carryingCapacity);
-        randomTruck.horsePower(horsePower);
-        randomTruck.licensePlate(licensePlate);
-        randomTruck.wheelBase(wheelBase);
-        randomTruck.wheelCut(wheelCut);
-        randomTruck.transmission(transmission);
+		int horsePower = Truck.HORSEPOWER_MIN
+				+ randomNumberGenerator.nextInt(Truck.HORSEPOWER_MAX - Truck.HORSEPOWER_MIN);
 
-        return randomTruck.build();
-    }
+		String transmission = Truck.TRANSMISSION_VALUES[randomNumberGenerator.nextInt(2)];
 
-    /**
-     *
-     * @return carrying capacity
-     */
-    public int getCarryingCapacity() {
-        return carryingCapacity;
-    }
+		int wheelBase = Truck.WHEELBASE_MIN + randomNumberGenerator.nextInt(Truck.WHEELBASE_MAX - Truck.WHEELBASE_MIN);
 
-    /**
-     *
-     * @return horsepower
-     */
-    public int getHorsePower() {
-        return horsePower;
-    }
+		int wheelCut = Truck.WHEELCUT_MIN + randomNumberGenerator.nextInt(Truck.WHEELCUT_MAX - Truck.WHEELCUT_MIN);
 
-    /**
-     * @return License plate number
-     */
-    public String getLicensePlate() {
-        return licensePlate;
-    }
+		randomTruck.carryingCapacity(carryingCapacity);
+		randomTruck.horsePower(horsePower);
+		randomTruck.licensePlate(licensePlate);
+		randomTruck.wheelBase(wheelBase);
+		randomTruck.wheelCut(wheelCut);
+		randomTruck.transmission(transmission);
 
-    /**
-     *
-     * @return transmission
-     */
-    public String getTransmission() {
-        return transmission;
-    }
+		return randomTruck.build();
+	}
 
-    /**
-     *
-     * @return wheel base of the truck
-     */
-    public int getWheelBase() {
-        return wheelBase;
-    }
+	/**
+	 *
+	 * @return carrying capacity
+	 */
+	public int getCarryingCapacity() {
+		return carryingCapacity;
+	}
 
-    /**
-     *
-     * @return wheel cut of the truck
-     */
-    public int getWheelCut() {
-        return wheelCut;
-    }
-    
-    public String toString() {
-    	StringBuilder sb = new StringBuilder();
-    	sb.append("Truck ");
-    	sb.append(licensePlate);
-    	sb.append(", capacity = "+carryingCapacity);
-    	sb.append(", horsePower = "+horsePower);
-    	sb.append(", transmission = "+transmission);
-    	sb.append(", wheelBase = "+wheelBase);
-    	sb.append(", wheelCut = "+wheelCut);
-    	return sb.toString();
+	/**
+	 *
+	 * @return horsepower
+	 */
+	public int getHorsePower() {
+		return horsePower;
+	}
 
-    }
+	/**
+	 * @return License plate number
+	 */
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+
+	/**
+	 *
+	 * @return transmission
+	 */
+	public String getTransmission() {
+		return transmission;
+	}
+
+	/**
+	 *
+	 * @return wheel base of the truck
+	 */
+	public int getWheelBase() {
+		return wheelBase;
+	}
+
+	/**
+	 *
+	 * @return wheel cut of the truck
+	 */
+	public int getWheelCut() {
+		return wheelCut;
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Truck ");
+		sb.append(licensePlate);
+		sb.append(", capacity = " + carryingCapacity);
+		sb.append(", horsePower = " + horsePower);
+		sb.append(", transmission = " + transmission);
+		sb.append(", wheelBase = " + wheelBase);
+		sb.append(", wheelCut = " + wheelCut);
+		return sb.toString();
+
+	}
 
 	@Override
 	public int hashCode() {
@@ -235,7 +232,5 @@ public class Truck {
 			return false;
 		return true;
 	}
-    
-    
 
 }

@@ -2,27 +2,27 @@ package unl.cse.trucks;
 
 public class TruckListNode {
 
-    private TruckListNode next;
-    private Truck item;
+	private TruckListNode next;
+	private Truck item;
 
-    public TruckListNode(Truck item) {
-        this.item = item;
-        this.next = null;
-    }
+	public TruckListNode(Truck item) {
+		this.item = item;
+		this.next = null;
+	}
 
-    public Truck getTruck() {
-        return item;
-    }
+	public Truck getTruck() {
+		return item;
+	}
 
-    public TruckListNode getNext() {
-        return next;
-    }
+	public TruckListNode getNext() {
+		return next;
+	}
 
-    public void setNext(TruckListNode next) {
-        this.next = next;
-    }
-    
-    public String toString() {
-    	return this.item.toString();
-    }
+	public void setNext(TruckListNode next) {
+		this.next = next;
+	}
+
+	public String toString() {
+		return this.item.toString();
+	}
 }

@@ -1,11 +1,10 @@
 # Computer Science II
 ## Lab 11.0 - Linked Lists
+[School of Computing](https://computing.unl.edu)  
+[College of Engineering](https://engineering.unl.edu/)  
+[University of Nebraska-Lincoln](https://unl.edu)  
 
 An introduction linked list data structures.
-
-This is a lab used in Computer Science II (CSCE 156, CSCE 156H) in the 
-[Department of Computer Science & Engineering](https://cse.unl.edu) at the 
-[University of Nebraska-Lincoln](https://unl.edu).
 
 ## Overview
 
@@ -15,14 +14,13 @@ Prior to lab you should read/review the following resources.
 
 1.  Review this laboratory handout prior to lab.
 
-2.  Read the following wiki entry on linked lists:  
-    <http://en.wikipedia.org/wiki/Linked_list>
+2.  Read Chapter 4.2 of [Computer Science II](https://bitbucket.org/chrisbourke/computerscienceii/raw/5fb93f03e15728f209090a7b28a6025e2155685d/ComputerScienceTwo.pdf)
 
 ### Lab Objectives & Topics
 
 Following the lab, you should be able to:
 
--   Use Linked Lists to store/retrieve/manipulate large collections of
+-   Use Linked Lists to store, retrieve, and manipulate collections of
     objects
 
 -   Implement Java interfaces
