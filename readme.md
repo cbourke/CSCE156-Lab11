@@ -3,6 +3,7 @@
 [School of Computing](https://computing.unl.edu)  
 [College of Engineering](https://engineering.unl.edu/)  
 [University of Nebraska-Lincoln](https://unl.edu)  
+[University of Nebraska-Omaha](https://unomaha.edu)  
 
 An introduction linked list data structures.
 
@@ -57,7 +58,7 @@ lab.
 ## 1. Getting Started
 
 Clone this project code for this lab from GitHub in Eclipse using the
-URL: https://github.com/cbourke/CSCE156-Lab11. Refer to Lab 1.0 for
+URL: <https://github.com/cbourke/CSCE156-Lab11>. Refer to Lab 1.0 for
 instructions on how to clone a project from GitHub.
 
 ## 2. Linked Lists
